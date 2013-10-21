@@ -10,22 +10,22 @@ import java.util.List;
 
 public class FileReader {
 	
-	private static final String resourceFile = "src/main/resources/game.txt";
+	private static final String resourceFile = "/src/main/resources/game.txt";
 
 	public FileInputStream getResourceFile(String filePath) throws FileNotFoundException{
 		String userDir = System.getProperty("user.dir");
 		return new FileInputStream(userDir + filePath);
 	}
 	
-	public List<String> getFileLine() throws IOException{
+	public List<String> getFileLine() throws IOException {
 		String logLineContent = new String();
 		List<String> resourceLines = new ArrayList<String>();
 		
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getResourceFile(resourceFile)));
 		
-		if((logLineContent = bufferedReader.readLine()) != null){
-			
+		while ((logLineContent = bufferedReader.readLine()) != null) {
+			resourceLines.add(logLineContent);
 		}
-			return null;
+			return resourceLines;
 	}
 }
