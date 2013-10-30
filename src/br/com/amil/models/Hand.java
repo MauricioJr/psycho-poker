@@ -14,7 +14,7 @@ public class Hand{
 		this.cards = cards;
 	}
 
-	@Override
+	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -22,7 +22,7 @@ public class Hand{
 		return result;
 	}
 
-	@Override
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -37,6 +37,11 @@ public class Hand{
 		} else if (!cards.equals(other.cards))
 			return false;
 		return true;
+	}
+
+	
+	public String toString() {
+		return cards.toString();
 	}
 
 	
