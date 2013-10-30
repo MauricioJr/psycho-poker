@@ -1,6 +1,6 @@
 package test.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import br.com.amil.business.FileReader;
+import br.com.amil.business.FileReaderImpl;
 
 public class TestFileReader {
 
@@ -27,7 +28,7 @@ public class TestFileReader {
 		expectedResult.add("3D 5S 2H QD TD 6S KH 9H AD QH");
 		
 		List<String> contentLines = null;
-		  FileReader fr = new FileReader();
+		  FileReader fr = new FileReaderImpl();
 		
 		try {
 			contentLines = fr.getFileLine();
