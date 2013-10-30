@@ -1,22 +1,26 @@
 package br.com.amil.models;
 
-public class Card {
+import br.com.amil.constants.Value;
+
+public class Card implements Comparable<Card> {
 	
-	String value;
+	Value value;
 	Suit suit;
 	
-	public Card(String value, Suit suit) {
+	public Card(Value value, Suit suit) {
 		super();
 		this.value = value;
 		this.suit = suit;
 	}
 
-	public String getValue() {
+	public Value getValue() {
 		return value;
 	}
-	public void setValue(String value) {
+
+	public void setValue(Value value) {
 		this.value = value;
 	}
+
 	public Suit getSuit() {
 		return suit;
 	}
@@ -24,6 +28,12 @@ public class Card {
 		this.suit = suit;
 	}
 
+	public int compareTo(Card card) {
+        return card.getValue().compareTo(this.getValue());
+	}
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,7 +65,9 @@ public class Card {
 		return true;
 	}
 
-	
-	
-	
+	@Override
+	public String toString() {
+		return value.toString() +" "+suit.toString();
+	}
+
 }
