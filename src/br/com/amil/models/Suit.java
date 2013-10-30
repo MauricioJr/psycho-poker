@@ -1,7 +1,5 @@
 package br.com.amil.models;
 
-import java.util.List;
-
 public class Suit implements Comparable<Suit>{
 
 	public String value;
@@ -15,19 +13,6 @@ public class Suit implements Comparable<Suit>{
 		return value;
 	}
 
-	public Boolean suitSequenceValidator(Match currentMatch){
-		List<Card> cardsOnHand = currentMatch.getMatchPlayer().getHand().getCards();
-		 
-		for (Card card : cardsOnHand) {
-			if(!card.getSuit().equals(cardsOnHand.get(0).getSuit())){
-			   return false;
-			}
-		}
-		
-		return true;
-	}
-	
-	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -55,6 +40,11 @@ public class Suit implements Comparable<Suit>{
 	
 	public int compareTo(Suit suit) {
 		return suit.getValue().compareTo(this.getValue());
+	}
+
+	@Override
+	public String toString() {
+		return value.toString();
 	}
 	
 	
