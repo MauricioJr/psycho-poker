@@ -1,8 +1,9 @@
 package br.com.amil.constants;
 
 public enum Value {
-		A("A",1), TWO("TWO",2), THREE("THREE",3), FOUR("FOUR",4), FIVE("FIVE",5), SIX("SIX",6), SEVEN("SEVEN",7), 
-		EIGTH("EIGTH",8), NINE("NINE",9), T("T",10), J("J",11), Q("Q",12), K("K",13);
+	K("K", 13), Q("Q", 12), J("J", 11), T("T", 10), NINE("NINE", 9), 
+	EIGTH("EIGTH", 8), SEVEN("SEVEN", 7), SIX("SIX", 6), FIVE("FIVE", 5), 
+	FOUR("FOUR", 4), THREE("THREE", 3), TWO("TWO", 2), A("A", 1);
 
 		private Integer intValue;
 		private String 	specialCard;
