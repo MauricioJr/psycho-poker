@@ -2,20 +2,28 @@ package br.com.amil.models;
 
 public class Match {
 
-	private Hand matchHand;
+	private Player matchPlayer;
 	private Deck matchDeck;
 	
-	public Match(Hand currentHand, Deck currentDeck){
-		this.matchHand = currentHand;
-		this.matchDeck = currentDeck;
+	public Match(Player matchPlayer, Deck matchDeck) {
+		super();
+		this.matchPlayer = matchPlayer;
+		this.matchDeck = matchDeck;
 	}
-	
-	public Hand getMatchHand() {
-		return matchHand;
+	public Player getMatchPlayer() {
+		return matchPlayer;
+	}
+	public void setMatchPlayer(Player matchPlayer) {
+		this.matchPlayer = matchPlayer;
 	}
 	public Deck getMatchDeck() {
 		return matchDeck;
 	}
+	public void setMatchDeck(Deck matchDeck) {
+		this.matchDeck = matchDeck;
+	}
+	
+
 	
 	
 }
