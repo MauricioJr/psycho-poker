@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import br.com.amil.constants.Value;
+
 public class Deck {
 	List<Card> cardsInDeck;
 	
@@ -14,17 +16,33 @@ public class Deck {
 		this.cardsInDeck = cardsInDeck;
 	}
 
+	public List<Card> getCardsInDeck(){
+		return this.cardsInDeck;
+	}
+	
 	public List<Card> getCardsInDeck(String resourceLine) {
 
+		Value[] listOfValues = Value.values();
+		
+		
 		if (this.cardsInDeck == null) {
 			this.cardsInDeck = new ArrayList<Card>();
 			Pattern pattern = Pattern.compile("([A2-9TJQK][HCSD])");
 			Matcher matcher = pattern.matcher(resourceLine);
-		 
+			
+			
 			while(matcher.find()){
 				String cardInLine = matcher.group();
-				Card card = new Card(cardInLine.substring(0,1), new Suit(cardInLine.substring(1)));
-				this.cardsInDeck.add(card);
+				String cardValue = cardInLine.substring(0,1);
+				String suitValue = cardInLine.substring(1);
+				
+				
+				for (int i = 0; i < listOfValues.length; i++) {
+					if( (listOfValues[i].getIntValue().toString().equals(cardValue)) ||  listOfValues[i].getSpecialCard().equals(cardValue)){
+						this.cardsInDeck.add( new Card(listOfValues[i], new Suit(suitValue)) );
+						break;
+					}  
+				}
 			}
 		}
 		
